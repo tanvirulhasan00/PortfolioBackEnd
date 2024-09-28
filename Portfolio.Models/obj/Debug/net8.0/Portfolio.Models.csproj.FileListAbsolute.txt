@@ -1,0 +1,15 @@
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/bin/Debug/net8.0/Portfolio.Models.deps.json
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/bin/Debug/net8.0/Portfolio.Models.dll
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/bin/Debug/net8.0/Portfolio.Models.pdb
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.AssemblyInfoInputs.cache
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.AssemblyInfo.cs
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.csproj.CoreCompileInputs.cache
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.dll
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/refint/Portfolio.Models.dll
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.pdb
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/ref/Portfolio.Models.dll
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/bin/Debug/net8.0/Portfolio.RepositoryConfig.dll
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/bin/Debug/net8.0/Portfolio.RepositoryConfig.pdb
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.csproj.AssemblyReference.cache
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfoli.74E53E39.Up2Date
