@@ -29,9 +29,6 @@
             "projectReferences": {
               "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/Portfolio.Models.csproj": {
                 "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/Portfolio.Models.csproj"
-              },
-              "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj": {
-                "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj"
               }
             }
           }
@@ -116,11 +113,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj": {
-                "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -179,7 +172,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj": {
+                "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -196,6 +193,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "EFCore.BulkExtensions": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -266,6 +273,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.8, )"

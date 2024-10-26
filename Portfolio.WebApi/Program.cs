@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Portfolio.DatabaseConfig.Data;
+using Portfolio.RepositoryConfig.IRepositories;
+using Portfolio.RepositoryConfig.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<PortfolioDbContext>
     (options=>options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDatabase")));
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

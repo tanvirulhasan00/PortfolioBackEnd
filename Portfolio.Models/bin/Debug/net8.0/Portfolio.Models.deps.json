@@ -7,30 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "Portfolio.Models/1.0.0": {
-        "dependencies": {
-          "Portfolio.RepositoryConfig": "1.0.0"
-        },
         "runtime": {
           "Portfolio.Models.dll": {}
-        }
-      },
-      "Portfolio.RepositoryConfig/1.0.0": {
-        "runtime": {
-          "Portfolio.RepositoryConfig.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       }
     }
   },
   "libraries": {
     "Portfolio.Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Portfolio.RepositoryConfig/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1628,24 +1628,11 @@
       "Portfolio.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Portfolio.RepositoryConfig": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Portfolio.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/Portfolio.Models.dll": {}
-        }
-      },
-      "Portfolio.RepositoryConfig/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Portfolio.RepositoryConfig.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Portfolio.RepositoryConfig.dll": {}
         }
       }
     }
@@ -4426,11 +4413,6 @@
       "type": "project",
       "path": "../Portfolio.Models/Portfolio.Models.csproj",
       "msbuildProject": "../Portfolio.Models/Portfolio.Models.csproj"
-    },
-    "Portfolio.RepositoryConfig/1.0.0": {
-      "type": "project",
-      "path": "../Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj",
-      "msbuildProject": "../Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4440,8 +4422,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.8",
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
-      "Portfolio.Models >= 1.0.0",
-      "Portfolio.RepositoryConfig >= 1.0.0"
+      "Portfolio.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4472,9 +4453,6 @@
           "projectReferences": {
             "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/Portfolio.Models.csproj": {
               "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Models/Portfolio.Models.csproj"
-            },
-            "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj": {
-              "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj"
             }
           }
         }

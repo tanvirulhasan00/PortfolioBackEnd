@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Portfolio.Models.IRepositoryRequestModels;
 
 namespace Portfolio.RepositoryConfig.IRepositories
 {
     public interface IRepository<T> where T : class
     {
-        Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? expression = null, string? includeProperties = null);
-        Task<T> GetAsync(Expression<Func<T, bool>> expression, string? includeProperties = null, bool tracked = false);
+        Task<List<T>> GetAllAsync(IRepositoryRequest<T> request);
+        Task<T> GetAsync(IRepositoryRequest<T> request);
         Task AddAsync(T entity);
-        Task RemoveAsync(T entity);
-        Task RemoveRangeAsync(List<T> entities);
+        Task AddRangeAsync(List<T> entities);
+        void Remove(T entity);
+        void RemoveRange(List<T> entities);
     }
 }

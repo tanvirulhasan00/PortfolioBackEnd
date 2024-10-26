@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.RepositoryConfig\Portfolio.RepositoryConfig.csproj" />
+    <!-- <ProjectReference Include="..\Portfolio.RepositoryConfig\Portfolio.RepositoryConfig.csproj" /> -->
   </ItemGroup>
 
   <PropertyGroup>

@@ -10,10 +10,9 @@
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/Portfolio.DatabaseConfig.pdb
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/ref/Portfolio.DatabaseConfig.dll
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/bin/Debug/net8.0/Portfolio.Models.dll
-/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/bin/Debug/net8.0/Portfolio.RepositoryConfig.dll
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/bin/Debug/net8.0/Portfolio.Models.pdb
-/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/bin/Debug/net8.0/Portfolio.RepositoryConfig.pdb
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/Portfolio.DatabaseConfig.csproj.AssemblyReference.cache
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/Portfoli.56D1B166.Up2Date
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/bin/Debug/net8.0/Portfolio.DatabaseConfig.runtimeconfig.json
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/Portfolio.DatabaseConfig.genruntimeconfig.cache
+/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/obj/Debug/net8.0/Portfolio.DatabaseConfig.sourcelink.json

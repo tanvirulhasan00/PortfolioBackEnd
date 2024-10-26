@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Portfolio.Models\Portfolio.Models.csproj" />
-    <ProjectReference Include="..\Portfolio.RepositoryConfig\Portfolio.RepositoryConfig.csproj" />
   </ItemGroup>
 
   <ItemGroup>
