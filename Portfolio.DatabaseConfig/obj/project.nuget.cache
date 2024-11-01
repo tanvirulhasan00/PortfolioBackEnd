@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xpRzcz38jM8=",
+  "dgSpecHash": "v46Ud58T7g8=",
   "success": true,
-  "projectFilePath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj",
+  "projectFilePath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj",
   "expectedPackageFiles": [
     "/Users/tanvir/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/tanvir/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

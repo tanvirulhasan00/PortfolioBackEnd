@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Portfolio.RepositoryConfig
-build_property.ProjectDir = /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/
+build_property.ProjectDir = /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

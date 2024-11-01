@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj": {}
+    "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj": {}
   },
   "projects": {
-    "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj": {
+    "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj",
+        "projectUniqueName": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj",
         "projectName": "Portfolio.Utilities",
-        "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj",
+        "projectPath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Utilities/Portfolio.Utilities.csproj",
         "packagesPath": "/Users/tanvir/.nuget/packages/",
-        "outputPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.Utilities/obj/",
+        "outputPath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Utilities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tanvir/.nuget/NuGet/NuGet.Config"

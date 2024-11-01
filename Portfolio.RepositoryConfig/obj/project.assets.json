@@ -3537,11 +3537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj",
+      "projectUniqueName": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj",
       "projectName": "Portfolio.RepositoryConfig",
-      "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj",
+      "projectPath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/Portfolio.RepositoryConfig.csproj",
       "packagesPath": "/Users/tanvir/.nuget/packages/",
-      "outputPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/",
+      "outputPath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tanvir/.nuget/NuGet/NuGet.Config"
@@ -3557,8 +3557,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj": {
-              "projectPath": "/Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj"
+            "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj": {
+              "projectPath": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.DatabaseConfig/Portfolio.DatabaseConfig.csproj"
             }
           }
         }
