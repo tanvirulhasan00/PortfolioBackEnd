@@ -20,3 +20,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Utilities/obj/Debug/net9.0/refint/Portfolio.Utilities.dll
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Utilities/obj/Debug/net9.0/Portfolio.Utilities.pdb
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Utilities/obj/Debug/net9.0/ref/Portfolio.Utilities.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Utilities/obj/Debug/net9.0/Portfolio.Utilities.sourcelink.json

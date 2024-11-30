@@ -32,3 +32,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.DatabaseConnection/obj/Debug/net9.0/Portfolio.DatabaseConnection.pdb
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.DatabaseConnection/obj/Debug/net9.0/Portfolio.DatabaseConnection.genruntimeconfig.cache
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.DatabaseConnection/obj/Debug/net9.0/ref/Portfolio.DatabaseConnection.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.DatabaseConnection/obj/Debug/net9.0/Portfolio.DatabaseConnection.sourcelink.json

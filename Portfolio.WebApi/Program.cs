@@ -14,8 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add services to the container.
+// builder.Services.AddDbContext<PortfolioDbContext>(options =>
+//     options.UseNpgsql(builder.Configuration.GetConnectionString("PostGresLocalDatabase")));
+// Add services SQL to the container.
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostGresLocalDatabase")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LiveDatabase")));
 //Add IUnitOfWork service
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
@@ -31,7 +34,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins("https://localhost:7013", "https://localhost:5211", "http://localhost:3000") // Add allowed origins
+        policy.WithOrigins(
+            "https://localhost:7013",
+            "https://localhost:5211",
+            "http://localhost:3000",
+            "http://localhost:3001",
+            "http://tanvirul-001-site1.mtempurl.com/"
+            ) // Add allowed origins
               .AllowAnyHeader()  // Allow specific headers or use .WithHeaders()
               .AllowAnyMethod(); // Allow specific methods or use .WithMethods()
     });

@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models.DbModels;
 using Portfolio.Models.RequestModels.GenericRequestModels;
-using Portfolio.Models.RequestModels.PersonReqDto;
 using Portfolio.Models.RequestModels.ServiceReqDto;
 using Portfolio.Models.ResponseModels.ApiResponseModels;
 using Portfolio.RepositoryConfig.IRepositories;

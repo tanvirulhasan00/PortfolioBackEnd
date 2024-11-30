@@ -26,3 +26,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net9.0/Portfolio.DatabaseConnection.pdb
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net9.0/Portfolio.RepositoryConfig.csproj.AssemblyReference.cache
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net9.0/Portfoli.C4FCE8E1.Up2Date
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net9.0/Portfolio.RepositoryConfig.sourcelink.json
