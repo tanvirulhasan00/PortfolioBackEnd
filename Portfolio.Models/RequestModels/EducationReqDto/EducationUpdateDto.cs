@@ -11,5 +11,6 @@ namespace Portfolio.Models.RequestModels.EducationReqDto
         public string? Institute { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
+        public int IsActive { get; set; }
     }
 }

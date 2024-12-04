@@ -21,14 +21,16 @@ namespace Portfolio.DatabaseConnection
           .Build();
 
       // Get the connection string from the appsettings.json
-      var connectionString = configuration.GetConnectionString("PostGresLocalDatabase");
+      var connectionString = configuration.GetConnectionString("LiveDatabase");
 
 
       // Use the Npgsql provider and pass the connection string
-      optionsBuilder.UseNpgsql(connectionString);
+      //optionsBuilder.UseNpgsql(connectionString);
+      optionsBuilder.UseSqlServer(connectionString);
+
 
       // // Specify the migrations assembly (Portfolio.DatabaseConnection)
-      optionsBuilder.UseNpgsql(connectionString, options =>
+      optionsBuilder.UseSqlServer(connectionString, options =>
           options.MigrationsAssembly("Portfolio.DatabaseConnection"));
 
       return new PortfolioDbContext(optionsBuilder.Options);

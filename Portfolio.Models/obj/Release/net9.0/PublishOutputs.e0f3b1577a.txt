@@ -1,0 +1,3 @@
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/publish/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/publish/Portfolio.Models.deps.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/publish/Portfolio.Models.pdb

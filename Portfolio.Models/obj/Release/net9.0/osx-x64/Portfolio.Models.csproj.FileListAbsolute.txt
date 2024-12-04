@@ -1,0 +1,12 @@
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/bin/Release/net9.0/osx-x64/Portfolio.Models.deps.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/bin/Release/net9.0/osx-x64/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/bin/Release/net9.0/osx-x64/Portfolio.Models.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.AssemblyInfoInputs.cache
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.AssemblyInfo.cs
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.csproj.CoreCompileInputs.cache
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.sourcelink.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/refint/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/Portfolio.Models.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.Models/obj/Release/net9.0/osx-x64/ref/Portfolio.Models.dll

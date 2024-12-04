@@ -13,6 +13,6 @@ namespace Portfolio.Models.RequestModels.ProjectReqDto
         public string? ImageUrl { get; set; }
         public string? LiveLink { get; set; }
         public string? GithubLink { get; set; }
-        public bool IsActive { get; set; }
+        public int IsActive { get; set; }
     }
 }

@@ -65,6 +65,15 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
     });
 }
+else
+{
+    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
+    });
+}
 // Redirect root URL to Swagger UI
 app.MapGet("/", context =>
 {

@@ -1132,6 +1132,7 @@
       "Portfolio.DatabaseConnection/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.Extensions.Configuration": "9.0.0",
           "Microsoft.Extensions.Configuration.Json": "9.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0",

@@ -9,6 +9,6 @@ namespace Portfolio.Models.RequestModels.ServiceReqDto
     {
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public bool IsActive { get; set; }
+        public int IsActive { get; set; }
     }
 }

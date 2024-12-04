@@ -10,6 +10,6 @@ namespace Portfolio.Models.RequestModels.TechnologyReqDto
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? LogoUrl { get; set; }
-        public bool IsActive { get; set; }
+        public int IsActive { get; set; }
     }
 }
