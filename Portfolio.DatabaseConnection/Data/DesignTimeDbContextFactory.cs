@@ -21,7 +21,7 @@ namespace Portfolio.DatabaseConnection
           .Build();
 
       // Get the connection string from the appsettings.json
-      var connectionString = configuration.GetConnectionString("LiveDatabase");
+      var connectionString = configuration.GetConnectionString("LocalDatabase");
 
 
       // Use the Npgsql provider and pass the connection string

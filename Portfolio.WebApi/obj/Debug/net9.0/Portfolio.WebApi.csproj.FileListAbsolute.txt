@@ -334,3 +334,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.WebApi/bin/Debug/net9.0/Portfolio.RepositoryConfig.pdb
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.WebApi/bin/Debug/net9.0/AutoMapper.dll
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.WebApi/obj/Debug/net9.0/Portfolio.WebApi.sourcelink.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-9/Portfolio/Portfolio.WebApi/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

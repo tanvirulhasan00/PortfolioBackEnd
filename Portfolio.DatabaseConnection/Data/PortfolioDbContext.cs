@@ -21,6 +21,9 @@ namespace Portfolio.DatabaseConnection.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectAndTechnology> ProjectAndTechnologies { get; set; }
         #endregion
+        #region L
+        public DbSet<LocalUser> LocalUsers { get; set; }
+        #endregion
         #region S
         public DbSet<Service> Services { get; set; }
         #endregion

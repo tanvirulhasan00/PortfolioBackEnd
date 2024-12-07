@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 //     options.UseNpgsql(builder.Configuration.GetConnectionString("PostGresLocalDatabase")));
 // Add services SQL to the container.
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LiveDatabase")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDatabase")));
 //Add IUnitOfWork service
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
@@ -65,15 +65,7 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
     });
 }
-else
-{
-    app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
-    });
-}
+
 // Redirect root URL to Swagger UI
 app.MapGet("/", context =>
 {
