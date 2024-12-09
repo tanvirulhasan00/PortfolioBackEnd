@@ -16,7 +16,8 @@ using Portfolio.RepositoryConfig.IRepositories;
 namespace Portfolio.WebApi.Controller
 {
     [ApiController]
-    [Route("api/experience")]
+    [Route("api/v{version:apiVersion}/experience")]
+    [ApiVersion("1.0")]
     public class ExperienceController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

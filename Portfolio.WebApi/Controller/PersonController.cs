@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models.DbModels;
 using Portfolio.Models.RequestModels.GenericRequestModels;
@@ -14,7 +15,8 @@ using Portfolio.RepositoryConfig.IRepositories;
 namespace Portfolio.WebApi.Controller
 {
     [ApiController]
-    [Route("api/person")]
+    [Route("api/v{version:apiVersion}/person")]
+    [ApiVersion("1.0")]
     public class PersonController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -28,6 +30,7 @@ namespace Portfolio.WebApi.Controller
         }
         [HttpGet]
         [Route("GetAll")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<Person>> GetAllPerson(CancellationToken cancellationToken)
         {
             var req = new GenericRequest<Person>
@@ -72,6 +75,7 @@ namespace Portfolio.WebApi.Controller
 
         [HttpPost]
         [Route("Create")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<Person>> CreatePerson([FromBody] PersonCreateDto request)
         {
             var isUniqueUser = _unitOfWork.Person.IsUniqueUser();
@@ -117,6 +121,7 @@ namespace Portfolio.WebApi.Controller
 
         [HttpPost]
         [Route("Update")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<Person>> UpdatePerson(int Id, [FromBody] PersonUpdateDto request, CancellationToken cancellationToken)
         {
             if (request == null || Id != 1)
@@ -200,6 +205,7 @@ namespace Portfolio.WebApi.Controller
 
         [HttpPost]
         [Route("Remove")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<Person>> RemovePerson(int Id, CancellationToken cancellationToken)
         {
             var req = new GenericRequest<Person>

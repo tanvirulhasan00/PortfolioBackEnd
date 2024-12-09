@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Portfolio.DatabaseConnection.Data;
 using Portfolio.RepositoryConfig.IRepositories;
 using Portfolio.RepositoryConfig.IRepositories.ICustomerMessageRepo;
@@ -32,9 +33,11 @@ namespace Portfolio.RepositoryConfig.Repositories
         public IProjectAndTechnologyRepository ProjectAndTechnology { get; private set; }
         public ITechnologyRepository Technology { get; private set; }
         public IUserRepository LocalUser { get; private set; }
-        public UnitOfWork(PortfolioDbContext dbContext)
+        private readonly string SecretKey;
+        public UnitOfWork(PortfolioDbContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            SecretKey = configuration["TokenSetting:SecretKey"] ?? "";
             Person = new PersonRepository(_dbContext);
             Service = new ServiceRepository(_dbContext);
             Experience = new ExperienceRepository(_dbContext);
@@ -43,7 +46,7 @@ namespace Portfolio.RepositoryConfig.Repositories
             Project = new ProjectRepository(_dbContext);
             ProjectAndTechnology = new ProjectAndTechnologyRepository(_dbContext);
             Technology = new TechnologyRepository(_dbContext);
-            LocalUser = new UserRepository(_dbContext);
+            LocalUser = new UserRepository(_dbContext, SecretKey);
         }
         public async Task<int> Save()
         {

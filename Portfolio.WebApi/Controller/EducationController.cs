@@ -10,7 +10,8 @@ using Portfolio.RepositoryConfig.IRepositories;
 namespace Portfolio.WebApi.Controller
 {
     [ApiController]
-    [Route("api/education")]
+    [Route("api/v{version:apiVersion}/education")]
+    [ApiVersion("1.0")]
     public class EducationController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

@@ -10,7 +10,9 @@ using Portfolio.RepositoryConfig.IRepositories;
 namespace Portfolio.WebApi.Controller
 {
     [ApiController]
-    [Route("api/service")]
+    [Route("api/v{version:apiVersion}/service")]
+    [ApiVersion("1.0")]
+
     public class ServiceController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,7 +23,9 @@ namespace Portfolio.WebApi.Controller
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             this.response = new ApiResponse<Service>();
+
         }
+
         [HttpGet]
         [Route("GetAll")]
         public async Task<ApiResponse<Service>> GetAllService(CancellationToken cancellationToken)
@@ -64,10 +68,7 @@ namespace Portfolio.WebApi.Controller
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 response.Error = ex;
                 return response;
-
             }
-
-
         }
 
         [HttpPost]
