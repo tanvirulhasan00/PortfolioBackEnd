@@ -16,3 +16,21 @@
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.csproj.AssemblyReference.cache
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.sourcelink.json
 /Users/tanvir/Desktop/Projects-2/Dotnet projects/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfoli.C4FCE8E1.Up2Date
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.RepositoryConfig.deps.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.RepositoryConfig.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.RepositoryConfig.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.DatabaseConfig.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.DatabaseConfig.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/bin/Debug/net8.0/Portfolio.Models.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.csproj.AssemblyReference.cache
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.AssemblyInfoInputs.cache
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.AssemblyInfo.cs
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.csproj.CoreCompileInputs.cache
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.sourcelink.json
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfoli.C4FCE8E1.Up2Date
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/refint/Portfolio.RepositoryConfig.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/Portfolio.RepositoryConfig.pdb
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.RepositoryConfig/obj/Debug/net8.0/ref/Portfolio.RepositoryConfig.dll

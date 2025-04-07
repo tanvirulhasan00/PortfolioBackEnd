@@ -1,78 +1,62 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+using System.Net;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.DatabaseConfig.Data;
-using Portfolio.Models.IRepositoryRequestModels;
+using Portfolio.Models.ApiRequestModels.GenericRequestModels;
 using Portfolio.RepositoryConfig.IRepositories;
 
 namespace Portfolio.RepositoryConfig.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly PortfolioDbContext _dbContext;
-        internal readonly DbSet<T> dbSet;
-        public Repository(PortfolioDbContext dbContext)
+        private readonly PortfolioDbContext _context;
+        internal readonly DbSet<T> _dbSet;
+        public Repository(PortfolioDbContext context)
         {
-            _dbContext = dbContext;
-            this.dbSet = _dbContext.Set<T>();
+            _context = context;
+            this._dbSet = _context.Set<T>();
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<List<T>> GetAllAsync(GenericRequest<T> request)
         {
-            await dbSet.AddAsync(entity);
-        }
-
-        public async Task AddRangeAsync(List<T> entities)
-        {
-            await dbSet.AddRangeAsync(entities);
-        }
-
-        public async Task<List<T>> GetAllAsync(IRepositoryRequest<T> request)
-        {
-            IQueryable<T> query = request.NoTracking == true ? dbSet.AsNoTracking() : dbSet;
+            IQueryable<T> query = request.NoTracking == true ? _dbSet.AsNoTracking() : _dbSet;
             if (request.Expression != null)
             {
                 query = query.Where(request.Expression);
             }
             if (request.IncludeProperties != null)
             {
-                foreach (var includeProperty in request.IncludeProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var property in request.IncludeProperties.Split([','], StringSplitOptions.RemoveEmptyEntries))
                 {
-                    query = query.Include(includeProperty);
-                }
+                    query = query.Include(property);
+                };
             }
             return await query.ToListAsync(request.CancellationToken);
         }
-
-        public async Task<T> GetAsync(IRepositoryRequest<T> request)
+        public async Task<T> GetAsync(GenericRequest<T> request)
         {
-            IQueryable<T> query = request.NoTracking == true ? dbSet.AsNoTracking() : dbSet;
+            IQueryable<T> query = request.NoTracking == true ? _dbSet.AsNoTracking() : _dbSet;
             if (request.Expression != null)
             {
                 query = query.Where(request.Expression);
             }
             if (request.IncludeProperties != null)
             {
-                foreach (var includeProperty in request.IncludeProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var property in request.IncludeProperties.Split([','], StringSplitOptions.RemoveEmptyEntries))
                 {
-                    query = query.Include(includeProperty);
-                }
+                    query = query.Include(property);
+                };
             }
-            var data = await query.FirstOrDefaultAsync(request.CancellationToken) ?? throw new InvalidOperationException("Entity not found.");
-            return data;
+            var result = await query.FirstOrDefaultAsync(request.CancellationToken) ?? throw new Exception($"{HttpStatusCode.InternalServerError}");
+            return result;
+        }
+        public async Task AddAsync(T entity)
+        {
+            await _dbSet.AddAsync(entity);
         }
 
         public void Remove(T entity)
         {
-            dbSet.Remove(entity);
-        }
-
-        public void RemoveRange(List<T> entities)
-        {
-            dbSet.RemoveRange(entities);
+            _dbSet.Remove(entity);
         }
     }
 }

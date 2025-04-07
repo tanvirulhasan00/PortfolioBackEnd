@@ -2,22 +2,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-
-
 namespace Portfolio.DatabaseConfig.Data
 {
     public class PortfolioDbContextFactory : IDesignTimeDbContextFactory<PortfolioDbContext>
     {
         public PortfolioDbContext CreateDbContext(string[] args)
         {
-            #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                var basePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "Portfolio.WebApi");
-            #pragma warning restore CS8602 // Dereference of a possibly null reference.
-                // Build configuration
-                IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(basePath)
-                .AddJsonFile("appsettings.json")
-                .Build();
+            var currectDirectory = Directory.GetCurrentDirectory();
+            var parantDirectory = (Directory.GetParent(currectDirectory)?.FullName) ?? throw new InvalidOperationException("The parent directory could not be determined.");
+            var basePath = Path.Combine(parantDirectory, "Portfolio.WebApi");
+            // Build configuration
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(basePath)
+            .AddJsonFile("appsettings.json")
+            .Build();
 
             // Get the connection string
             var connectionString = configuration.GetConnectionString("LocalDatabase");
