@@ -22,3 +22,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/refint/Portfolio.Models.dll
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.pdb
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/ref/Portfolio.Models.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.Models/obj/Debug/net8.0/Portfolio.Models.csproj.AssemblyReference.cache
