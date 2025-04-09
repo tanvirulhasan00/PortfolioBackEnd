@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/7eba91e3-8058-4dea-b729-7c6ceff35308.png",
+      "PackagePath": "staticwebassets/images/7eba91e3-8058-4dea-b729-7c6ceff35308.png"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/a0a73876-7a73-42bf-aeef-cd2530d9a302.png",
+      "PackagePath": "staticwebassets/images/a0a73876-7a73-42bf-aeef-cd2530d9a302.png"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/dfcec7ec-b0ff-4575-86fc-c8f9a737ba56.jpg",
+      "PackagePath": "staticwebassets/images/dfcec7ec-b0ff-4575-86fc-c8f9a737ba56.jpg"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/f9ee65e4-19d9-4911-a83d-596a30f52bd7.jpg",
+      "PackagePath": "staticwebassets/images/f9ee65e4-19d9-4911-a83d-596a30f52bd7.jpg"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/pdfs/6e8cf9e6-b01e-446a-a3ac-604109bc4875.pdf",
+      "PackagePath": "staticwebassets/pdfs/6e8cf9e6-b01e-446a-a3ac-604109bc4875.pdf"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/pdfs/b8d5f69a-9f52-4645-8aa7-de7edd268ba9.pdf",
+      "PackagePath": "staticwebassets/pdfs/b8d5f69a-9f52-4645-8aa7-de7edd268ba9.pdf"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/videos/b9d9d67d-4002-40e9-b9d3-de0e4e9ab3f7",
+      "PackagePath": "staticwebassets/videos"
+    },
+    {
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/videos/c8322b9d-7a0c-4328-947c-7a921793a245",
+      "PackagePath": "staticwebassets/videos"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Portfolio.WebApi.props",
+      "PackagePath": "build\\Portfolio.WebApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\Portfolio.WebApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Portfolio.WebApi.props",
+      "PackagePath": "buildTransitive\\Portfolio.WebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

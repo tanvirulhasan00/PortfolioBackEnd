@@ -12,7 +12,6 @@ namespace Portfolio.RepositoryConfig.IRepositories.IUserRepo
 {
     public interface IUserRepository
     {
-        bool IsUniqueUser(string userName);
         Task<ApiResponse> Login(LoginRequestDto loginRequestDto);
         Task<ApiResponse> Registration(RegistrationRequestDto registrationRequestDto);
     }

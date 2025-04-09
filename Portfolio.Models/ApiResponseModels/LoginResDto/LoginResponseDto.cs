@@ -5,7 +5,7 @@ namespace Portfolio.Models.ApiResponseModels.LoginResDto
 {
   public class LoginResponseDto
   {
-    public LocalUser? User { get; set; }
+    // public ApplicationUser? User { get; set; }
     public string? Token { get; set; }
   }
 }

@@ -16,6 +16,6 @@ namespace Portfolio.Models.PortfolioModels
         public string? ImageUrl { get; set; }
         public string? LiveLink { get; set; }
         public string? GithubLink { get; set; }
-        public int IsActive { get; set; }
+        public int Active { get; set; }
     }
 }

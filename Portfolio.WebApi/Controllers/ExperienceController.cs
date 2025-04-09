@@ -24,7 +24,7 @@ namespace Portfolio.WebApi.Controllers
             response = new ApiResponse();
         }
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         public async Task<ApiResponse> GetAllExperience(CancellationToken cancellationToken)
         {
 
@@ -41,8 +41,8 @@ namespace Portfolio.WebApi.Controllers
                 if (experience == null)
                 {
                     response.Success = false;
-                    response.StatusCode = HttpStatusCode.NoContent;
-                    response.Message = "Unsuccessful";
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = "Data not found";
                     return response;
                 }
                 response.Success = true;
@@ -66,8 +66,59 @@ namespace Portfolio.WebApi.Controllers
             return response;
         }
 
+        [HttpGet]
+        [Route("get")]
+        public async Task<ApiResponse> GetExperience(int Id, CancellationToken cancellationToken)
+        {
+            if (Id <= 0)
+            {
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.BadRequest;
+                response.Message = "Id required.";
+                return response;
+            }
+
+            var req = new GenericRequest<Experience>
+            {
+                Expression = x => x.Id == Id,
+                IncludeProperties = null,
+                NoTracking = true,
+                CancellationToken = cancellationToken
+            };
+            try
+            {
+                var experience = await _unitOfWork.Experience.GetAsync(req);
+                if (experience == null)
+                {
+                    response.Success = false;
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = "Data not found";
+                    return response;
+                }
+                response.Success = true;
+                response.StatusCode = HttpStatusCode.OK;
+                response.Message = "Successful";
+                response.Result = experience;
+            }
+            catch (TaskCanceledException ex)
+            {
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.RequestTimeout;
+                response.Message = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+
         [HttpPost]
-        [Route("Create")]
+        [Route("create")]
         public async Task<ApiResponse> CreateExperience([FromBody] ExperienceCreateDto request)
         {
             if (request == null)
@@ -86,14 +137,14 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Experience created successfully";
                     return response;
                 }
                 else
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Failed to create";
                     return response;
                 }
             }
@@ -107,19 +158,19 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Update")]
-        public async Task<ApiResponse> UpdateExperience(int Id, [FromBody] ExperienceUpdateDto request, CancellationToken cancellationToken)
+        [Route("update")]
+        public async Task<ApiResponse> UpdateExperience([FromBody] ExperienceUpdateDto request, CancellationToken cancellationToken)
         {
-            if (request == null || Id == 0)
+            if (request.Id <= 0)
             {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
-                response.Message = "Unsuccessful";
+                response.Message = "Id required.";
                 return response;
             }
             var req = new GenericRequest<Experience>
             {
-                Expression = x => x.Id == Id,
+                Expression = x => x.Id == request.Id,
                 IncludeProperties = null,
                 NoTracking = true,
                 CancellationToken = cancellationToken
@@ -133,6 +184,7 @@ namespace Portfolio.WebApi.Controllers
                     experienceInfo.CompanyName = (request.CompanyName == "" || request.CompanyName == null) ? experienceInfo.CompanyName : request.CompanyName;
                     experienceInfo.StartDate = request.StartDate;
                     experienceInfo.EndDate = request.EndDate;
+                    experienceInfo.Active = request.Active;
 
                     _unitOfWork.Experience.Update(experienceInfo);
                 }
@@ -141,14 +193,14 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Experience updated successfully";
                     return response;
                 }
                 else
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Failed to update";
                     return response;
                 }
             }
@@ -170,14 +222,14 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Remove")]
-        public async Task<ApiResponse> RemoveExperience(int Id, CancellationToken cancellationToken)
+        [Route("delete")]
+        public async Task<ApiResponse> DeleteExperience(int Id, CancellationToken cancellationToken)
         {
-            if (Id == 0)
+            if (Id <= 0)
             {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
-                response.Message = "Unsuccessful";
+                response.Message = "Id required";
                 return response;
             }
 
@@ -197,14 +249,14 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Experience deleted successfully";
                     return response;
                 }
                 else
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Failed to delete";
                     return response;
                 }
             }

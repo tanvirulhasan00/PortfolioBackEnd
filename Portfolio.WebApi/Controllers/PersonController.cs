@@ -26,7 +26,7 @@ namespace Portfolio.WebApi.Controllers
             this.response = new ApiResponse();
         }
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         [Authorize(Roles = "admin")]
         public async Task<ApiResponse> GetAllPerson(CancellationToken cancellationToken)
         {
@@ -43,8 +43,8 @@ namespace Portfolio.WebApi.Controllers
                 if (person == null)
                 {
                     response.Success = false;
-                    response.StatusCode = HttpStatusCode.NoContent;
-                    response.Message = "Unsuccessful";
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = "Data not found.";
                     return response;
                 }
                 response.Success = true;
@@ -71,66 +71,20 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Create")]
+        [Route("update")]
         [Authorize(Roles = "admin")]
-        public async Task<ApiResponse> CreatePerson([FromBody] PersonCreateDto request)
+        public async Task<ApiResponse> UpdatePerson(PersonUpdateDto request, CancellationToken cancellationToken)
         {
-            var isUniqueUser = _unitOfWork.Person.IsUniqueUser();
-            if (!isUniqueUser)
-            {
-                response.Success = false;
-                response.StatusCode = HttpStatusCode.Ambiguous;
-                response.Message = "Unsuccessful - User already exists.";
-                return response;
-            }
-
-            var model = _mapper.Map<Person>(request);
-            try
-            {
-                await _unitOfWork.Person.AddAsync(model);
-                int result = await _unitOfWork.Save();
-                if (result > 0)
-                {
-                    response.Success = true;
-                    response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
-                    return response;
-                }
-                else
-                {
-                    response.Success = false;
-                    response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = $"Unsuccessful";
-                    return response;
-                }
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.StatusCode = HttpStatusCode.InternalServerError;
-                response.Message = ex.Message;
-                return response;
-            }
-
-
-
-        }
-
-        [HttpPost]
-        [Route("Update")]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse> UpdatePerson(int Id, [FromBody] PersonUpdateDto request, CancellationToken cancellationToken)
-        {
-            if (request == null || Id != 1)
+            if (request.Id <= 0)
             {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
-                response.Message = "Unsuccessful";
+                response.Message = "Id required.";
                 return response;
             }
             var req = new GenericRequest<Person>
             {
-                Expression = x => x.Id == Id,
+                Expression = x => x.Id == request.Id,
                 IncludeProperties = null,
                 NoTracking = true,
                 CancellationToken = cancellationToken
@@ -138,8 +92,51 @@ namespace Portfolio.WebApi.Controllers
             try
             {
                 var personInfo = await _unitOfWork.Person.GetAsync(req);
+                if (personInfo == null)
+                {
+                    response.Success = false;
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = $"data not found with the id {request.Id}";
+                    return response;
+                }
                 if (personInfo != null)
                 {
+                    if (!string.IsNullOrEmpty(personInfo.ProfileImageUrl))
+                    {
+                        _unitOfWork.File.DeleteFile(personInfo.ProfileImageUrl);
+                    }
+                    if (!string.IsNullOrEmpty(personInfo.LogoUrl))
+                    {
+                        _unitOfWork.File.DeleteFile(personInfo.LogoUrl);
+                    }
+                    if (!string.IsNullOrEmpty(personInfo.CVDownloadLink))
+                    {
+                        _unitOfWork.File.DeleteFile(personInfo.CVDownloadLink);
+                    }
+                    if (!string.IsNullOrEmpty(personInfo.VideoCVLink))
+                    {
+                        _unitOfWork.File.DeleteFile(personInfo.VideoCVLink);
+                    }
+                    var profilePicUrl = "";
+                    var logoUrl = "";
+                    var cvUrl = "";
+                    var videoCvUrl = "";
+                    if (request.ProfileImageUrl != null)
+                    {
+                        profilePicUrl = await _unitOfWork.File.FileUpload(request.ProfileImageUrl);
+                    }
+                    if (request.LogoUrl != null)
+                    {
+                        logoUrl = await _unitOfWork.File.FileUpload(request.LogoUrl);
+                    }
+                    if (request.CVDownloadLink != null)
+                    {
+                        cvUrl = await _unitOfWork.File.FileUpload(request.CVDownloadLink);
+                    }
+                    if (request.VideoCVLink != null)
+                    {
+                        videoCvUrl = await _unitOfWork.File.FileUpload(request.VideoCVLink);
+                    }
                     personInfo.FirstName = (request.FirstName == "" || request.FirstName == null) ? personInfo.FirstName : request.FirstName;
                     personInfo.LastName = (request.LastName == "" || request.LastName == null) ? personInfo.LastName : request.LastName;
                     personInfo.PhoneNumber = (request.PhoneNumber == "" || request.PhoneNumber == null) ? personInfo.PhoneNumber : request.PhoneNumber;
@@ -150,18 +147,19 @@ namespace Portfolio.WebApi.Controllers
                     personInfo.Country = (request.Country == "" || request.Country == null) ? personInfo.Country : request.Country;
                     personInfo.Nationality = (request.Nationality == "" || request.Nationality == null) ? personInfo.Nationality : request.Nationality;
                     personInfo.PostCode = (request.PostCode == "" || request.PostCode == null) ? personInfo.PostCode : request.PostCode;
-                    personInfo.IsAvailableInFreelance = (request.IsAvailableInFreelance == "" || request.IsAvailableInFreelance == null) ? personInfo.IsAvailableInFreelance : request.IsAvailableInFreelance;
+                    personInfo.AvailableInFreelance = (request.AvailableInFreelance == 0) ? personInfo.AvailableInFreelance : request.AvailableInFreelance;
                     personInfo.NumberOfYearsOfExperience = request.NumberOfYearsOfExperience == 0 ? personInfo.NumberOfYearsOfExperience : request.NumberOfYearsOfExperience;
                     personInfo.NumberOfProjects = request.NumberOfProjects == 0 ? personInfo.NumberOfProjects : request.NumberOfProjects;
                     personInfo.NumberOfCodeCommits = request.NumberOfCodeCommits == 0 ? personInfo.NumberOfCodeCommits : request.NumberOfCodeCommits;
                     personInfo.NumberOfTechnologies = request.NumberOfTechnologies == 0 ? personInfo.NumberOfTechnologies : request.NumberOfTechnologies;
-                    personInfo.ProfileImageUrl = (request.ProfileImageUrl == "" || request.ProfileImageUrl == null) ? personInfo.ProfileImageUrl : request.ProfileImageUrl;
-                    personInfo.LogoUrl = (request.LogoUrl == "" || request.LogoUrl == null) ? personInfo.LogoUrl : request.LogoUrl;
+                    personInfo.ProfileImageUrl = (request.ProfileImageUrl == null) ? personInfo.ProfileImageUrl : profilePicUrl;
+                    personInfo.LogoUrl = (request.LogoUrl == null) ? personInfo.LogoUrl : logoUrl;
                     personInfo.LinkedInLink = (request.LinkedInLink == "" || request.LinkedInLink == null) ? personInfo.LinkedInLink : request.LinkedInLink;
                     personInfo.GitHubLink = (request.GitHubLink == "" || request.GitHubLink == null) ? personInfo.GitHubLink : request.GitHubLink;
                     personInfo.YoutubeLink = (request.YoutubeLink == "" || request.YoutubeLink == null) ? personInfo.YoutubeLink : request.YoutubeLink;
                     personInfo.TwitterLink = (request.TwitterLink == "" || request.TwitterLink == null) ? personInfo.TwitterLink : request.TwitterLink;
-                    personInfo.VideoCVLink = (request.VideoCVLink == "" || request.VideoCVLink == null) ? personInfo.VideoCVLink : request.VideoCVLink;
+                    personInfo.CVDownloadLink = (request.CVDownloadLink == null) ? personInfo.CVDownloadLink : cvUrl;
+                    personInfo.VideoCVLink = (request.VideoCVLink == null) ? personInfo.VideoCVLink : videoCvUrl;
 
                     _unitOfWork.Person.Update(personInfo);
                 }
@@ -170,14 +168,14 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Person updated successfully.";
                     return response;
                 }
                 else
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Update failed.";
                     return response;
                 }
             }
@@ -201,7 +199,7 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Remove")]
+        [Route("remove")]
         [Authorize(Roles = "admin")]
         public async Task<ApiResponse> RemovePerson(int Id, CancellationToken cancellationToken)
         {

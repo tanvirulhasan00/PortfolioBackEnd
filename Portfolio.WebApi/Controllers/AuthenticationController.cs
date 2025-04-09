@@ -10,6 +10,7 @@ using Portfolio.Models.ApiRequestModels.RegistrationReqDto;
 using Portfolio.Models.ApiResponseModels.ApiResponse;
 using Portfolio.Models.ApiResponseModels.LoginResDto;
 using Portfolio.RepositoryConfig.IRepositories;
+using System.Text.RegularExpressions;
 
 namespace Portfolio.WebApi.Controllers
 {
@@ -25,56 +26,33 @@ namespace Portfolio.WebApi.Controllers
         }
         [HttpPost]
         [Route("login")]
-        public async Task<ApiResponse> Login([FromBody] LoginRequestDto request)
+        public async Task<ApiResponse> Login(LoginRequestDto request)
         {
             var response = new ApiResponse();
 
-            var loginRes = await _unitOfWork.LocalUser.Login(request);
-            if (loginRes.Success == false)
-            {
-                response.Success = loginRes.Success;
-                response.StatusCode = loginRes.StatusCode;
-                response.Message = loginRes.Message;
-                return response;
-            }
-
-            response.Success = loginRes.Success;
-            response.StatusCode = loginRes.StatusCode;
-            response.Message = loginRes.Message;
-            response.Result = loginRes.Result;
-
+            var loginRes = await _unitOfWork.Auth.Login(request);
+            response = loginRes;
             return response;
         }
 
         [HttpPost]
         [Route("registration")]
-        public async Task<ApiResponse> Registration([FromBody] RegistrationRequestDto request)
+        public async Task<ApiResponse> Registration(RegistrationRequestDto request)
         {
             var response = new ApiResponse();
-            var ifUniqueUser = _unitOfWork.LocalUser.IsUniqueUser(request.UserName);
-            if (!ifUniqueUser)
+
+            var PasswordRegex = @"^(?=(.*[A-Z]))(?=(.*\d))(?=(.*\W))(?=.{6,})[A-Za-z\d\W]*$";
+            var regex = new Regex(PasswordRegex);
+            var validPassword = regex.IsMatch(request.Password);
+            if (!validPassword)
             {
                 response.Success = false;
-                response.StatusCode = HttpStatusCode.Conflict;
-                response.Message = "User already exits";
+                response.StatusCode = HttpStatusCode.BadRequest;
+                response.Message = "Password must be at least 6 characters long, include at least one uppercase letter, one digit, and one non-alphanumeric character.";
                 return response;
             }
-            var user = await _unitOfWork.LocalUser.Registration(request);
-            if (user.Success == false)
-            {
-                response.Success = user.Success;
-                response.StatusCode = user.StatusCode;
-                response.Message = user.Message;
-                return response;
-            }
-            await _unitOfWork.Save();
 
-            response.Success = user.Success;
-            response.StatusCode = user.StatusCode;
-            response.Message = user.Message;
-            //user.Result = "";
-            response.Result = user.Result;
-
+            response = await _unitOfWork.Auth.Registration(request);
             return response;
         }
     }

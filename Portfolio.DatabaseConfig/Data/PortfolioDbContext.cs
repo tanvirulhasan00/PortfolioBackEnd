@@ -1,11 +1,15 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Models.PortfolioModels;
 using Portfolio.Models.PortfolioModels.AuthenticationModels;
 
 namespace Portfolio.DatabaseConfig.Data
 {
-    public class PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : DbContext(options)
+    public class PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
+        #region A
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        #endregion
         #region C
         public DbSet<CustomerMessage> CustomerMessages { get; set; }
         #endregion
@@ -17,9 +21,6 @@ namespace Portfolio.DatabaseConfig.Data
         public DbSet<Person> Persons { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectAndTechnology> ProjectAndTechnologies { get; set; }
-        #endregion
-        #region L
-        public DbSet<LocalUser> LocalUsers { get; set; }
         #endregion
         #region S
         public DbSet<Service> Services { get; set; }

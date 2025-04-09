@@ -27,7 +27,7 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         public async Task<ApiResponse> GetAllService(CancellationToken cancellationToken)
         {
             var req = new GenericRequest<Service>
@@ -43,8 +43,8 @@ namespace Portfolio.WebApi.Controllers
                 if (service == null)
                 {
                     response.Success = false;
-                    response.StatusCode = HttpStatusCode.NoContent;
-                    response.Message = "Unsuccessful";
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = "Data not found.";
                     return response;
                 }
                 response.Success = true;
@@ -71,8 +71,54 @@ namespace Portfolio.WebApi.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("get")]
+        public async Task<ApiResponse> GetService(int Id, CancellationToken cancellationToken)
+        {
+            var req = new GenericRequest<Service>
+            {
+                Expression = x => x.Id == Id,
+                IncludeProperties = null,
+                NoTracking = true,
+                CancellationToken = cancellationToken
+            };
+            try
+            {
+                var service = await _unitOfWork.Service.GetAsync(req);
+                if (service == null)
+                {
+                    response.Success = false;
+                    response.StatusCode = HttpStatusCode.NotFound;
+                    response.Message = "Data not found.";
+                    return response;
+                }
+                response.Success = true;
+                response.StatusCode = HttpStatusCode.OK;
+                response.Message = "Successful";
+                response.Result = service;
+                return response;
+
+            }
+            catch (TaskCanceledException ex)
+            {
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.RequestTimeout;
+                response.Message = ex.Message;
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Message = ex.Message;
+                return response;
+            }
+        }
+
+
         [HttpPost]
-        [Route("Create")]
+        [Route("create")]
         public async Task<ApiResponse> CreateService([FromBody] ServiceCreateDto request)
         {
             if (request == null)
@@ -91,7 +137,7 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Service created successfully";
                     return response;
 
                 }
@@ -99,7 +145,7 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Failed to create";
                     return response;
 
                 }
@@ -114,19 +160,19 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Update")]
-        public async Task<ApiResponse> UpdateService(int Id, [FromBody] ServiceUpdateDto request, CancellationToken cancellationToken)
+        [Route("update")]
+        public async Task<ApiResponse> UpdateService([FromBody] ServiceUpdateDto request, CancellationToken cancellationToken)
         {
-            if (request == null || Id == 0)
+            if (request.Id <= 0)
             {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
-                response.Message = "Unsuccessful";
+                response.Message = "Id required";
                 return response;
             }
             var req = new GenericRequest<Service>
             {
-                Expression = x => x.Id == Id,
+                Expression = x => x.Id == request.Id,
                 IncludeProperties = null,
                 NoTracking = true,
                 CancellationToken = cancellationToken
@@ -138,7 +184,7 @@ namespace Portfolio.WebApi.Controllers
                 {
                     serviceInfo.Name = (request.Name == "" || request.Name == null) ? serviceInfo.Name : request.Name;
                     serviceInfo.Description = (request.Description == "" || request.Description == null) ? serviceInfo.Description : request.Description;
-                    serviceInfo.IsActive = request.IsActive;
+                    serviceInfo.Active = request.Active;
 
                     _unitOfWork.Service.Update(serviceInfo);
                 }
@@ -147,14 +193,14 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Service updated successfully";
                     return response;
                 }
                 else
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Service update unsuccessful";
                     return response;
                 }
             }
@@ -175,14 +221,14 @@ namespace Portfolio.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Remove")]
-        public async Task<ApiResponse> RemoveService(int Id, CancellationToken cancellationToken)
+        [Route("delete")]
+        public async Task<ApiResponse> DeleteService(int Id, CancellationToken cancellationToken)
         {
             if (Id == 0)
             {
                 response.Success = false;
                 response.StatusCode = HttpStatusCode.BadRequest;
-                response.Message = "Unsuccessful";
+                response.Message = "Id required.";
                 return response;
             }
             var req = new GenericRequest<Service>
@@ -201,7 +247,7 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = true;
                     response.StatusCode = HttpStatusCode.OK;
-                    response.Message = "Successful";
+                    response.Message = "Service deleted successfully";
                     return response;
 
                 }
@@ -209,7 +255,7 @@ namespace Portfolio.WebApi.Controllers
                 {
                     response.Success = false;
                     response.StatusCode = HttpStatusCode.InternalServerError;
-                    response.Message = "Unsuccessful";
+                    response.Message = "Failed to delete";
                     return response;
 
                 }

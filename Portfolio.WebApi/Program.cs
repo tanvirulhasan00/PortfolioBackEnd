@@ -1,10 +1,12 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Portfolio.DatabaseConfig.Data;
+using Portfolio.Models.PortfolioModels.AuthenticationModels;
 using Portfolio.RepositoryConfig.IRepositories;
 using Portfolio.RepositoryConfig.Repositories;
 using Portfolio.WebApi;
@@ -92,7 +94,11 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddDbContext<PortfolioDbContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDatabase")));
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<PortfolioDbContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 
 var key = builder.Configuration.GetValue<string>("TokenSetting:SecretKey") ?? "";
 

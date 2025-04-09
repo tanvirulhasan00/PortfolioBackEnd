@@ -17,7 +17,7 @@ namespace Portfolio.Models.PortfolioModels
         public string? Country { get; set; }
         public string? Nationality { get; set; }
         public string? PostCode { get; set; }
-        public string? IsAvailableInFreelance { get; set; }
+        public int AvailableInFreelance { get; set; }
         public int NumberOfYearsOfExperience { get; set; }
         public int NumberOfProjects { get; set; }
         public int NumberOfTechnologies { get; set; }
@@ -28,6 +28,7 @@ namespace Portfolio.Models.PortfolioModels
         public string? GitHubLink { get; set; }
         public string? YoutubeLink { get; set; }
         public string? TwitterLink { get; set; }
+        public string? CVDownloadLink { get; set; }
         public string? VideoCVLink { get; set; }
     }
 }

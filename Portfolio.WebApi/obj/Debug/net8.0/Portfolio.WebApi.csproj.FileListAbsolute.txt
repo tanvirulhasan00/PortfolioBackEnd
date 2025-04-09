@@ -387,3 +387,4 @@
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/bin/Debug/net8.0/System.Text.Encodings.Web.dll
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/bin/Debug/net8.0/System.Text.Json.dll
 /Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/bin/Debug/net8.0/Portfolio.WebApi.staticwebassets.runtime.json

@@ -3,6 +3,7 @@
 using Portfolio.RepositoryConfig.IRepositories.ICustomerMessageRepo;
 using Portfolio.RepositoryConfig.IRepositories.IEducationRepo;
 using Portfolio.RepositoryConfig.IRepositories.IExperienceRepo;
+using Portfolio.RepositoryConfig.IRepositories.IFileRepo;
 using Portfolio.RepositoryConfig.IRepositories.IPersonRepo;
 using Portfolio.RepositoryConfig.IRepositories.IProjectAndTechRepo;
 using Portfolio.RepositoryConfig.IRepositories.IProjectRepo;
@@ -22,7 +23,8 @@ namespace Portfolio.RepositoryConfig.IRepositories
         public IProjectRepository Project { get; }
         public IProjectAndTechnologyRepository ProjectAndTechnology { get; }
         public ITechnologyRepository Technology { get; }
-        public IUserRepository LocalUser { get; }
+        public IUserRepository Auth { get; }
+        public IFileRepository File { get; }
         Task<int> Save();
     }
 }

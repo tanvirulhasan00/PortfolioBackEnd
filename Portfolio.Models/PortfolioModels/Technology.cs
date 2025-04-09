@@ -13,6 +13,6 @@ namespace Portfolio.Models.PortfolioModels
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? LogoUrl { get; set; }
-        public int IsActive { get; set; }
+        public int Active { get; set; }
     }
 }

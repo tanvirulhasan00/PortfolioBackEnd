@@ -14,7 +14,7 @@ namespace Portfolio.Models.PortfolioModels
         public string? CompanyName { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
-        public int IsActive { get; set; }
+        public int Active { get; set; }
 
     }
 }
