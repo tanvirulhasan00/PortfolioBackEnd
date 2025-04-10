@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Portfolio.DatabaseConfig")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+354a332320c6958cc9df933408452b1afae2f4a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f71ec39acf73893e879ed0a891a48c52966e4e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Portfolio.DatabaseConfig")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Portfolio.DatabaseConfig")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

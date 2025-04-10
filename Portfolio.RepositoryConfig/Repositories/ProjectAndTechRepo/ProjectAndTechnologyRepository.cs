@@ -14,9 +14,9 @@ namespace Portfolio.RepositoryConfig.Repositories.ProjectAndTechRepo
             _context = context;
         }
 
-        // public void Update(ProjectAndTechnology projectAndTechnologies)
-        // {
-        //     _context.ProjectAndTechnologies.Update(projectAndTechnologies);
-        // }
+        public void Update(ProjectAndTechnology projectAndTechnologies)
+        {
+            _context.Update(projectAndTechnologies);
+        }
     }
 }
