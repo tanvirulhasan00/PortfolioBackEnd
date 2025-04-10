@@ -21,10 +21,12 @@ namespace Portfolio.RepositoryConfig.Repositories.FileRepo
         {
             // Get the root path of wwwroot
             var rootPath = _env.WebRootPath;
-            // Delete old NID picture if it exists
+            var uri = new Uri(fileUrl);
+            var relativePath = uri.AbsolutePath.TrimStart('/');
+            // Delete old picture if it exists
             if (!string.IsNullOrEmpty(fileUrl))
             {
-                var filePath = Path.Combine(rootPath, fileUrl.TrimStart('/'));
+                var filePath = Path.Combine(rootPath, relativePath);
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
@@ -32,7 +34,7 @@ namespace Portfolio.RepositoryConfig.Repositories.FileRepo
             }
         }
 
-        public async Task<string> FileUpload(IFormFile file)
+        public async Task<string> FileUpload(IFormFile file, string folderName)
         {
             // Get the root path of wwwroot
             var rootPath = _env.WebRootPath;
@@ -41,12 +43,12 @@ namespace Portfolio.RepositoryConfig.Repositories.FileRepo
             var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
 
             // Combine root path with file names to create file paths
-            var filePath = Path.Combine(rootPath, "images", fileName);
+            var filePath = Path.Combine(rootPath, folderName, fileName);
 
             // Ensure the "images" folder exists in wwwroot
-            var imagesFolder = Path.Combine(rootPath, "images");
-            if (!Directory.Exists(imagesFolder))
-                Directory.CreateDirectory(imagesFolder);
+            var folder = Path.Combine(rootPath, folderName);
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
 
             // Save the profile picture
             using (var stream = new FileStream(filePath, FileMode.Create))
@@ -55,7 +57,7 @@ namespace Portfolio.RepositoryConfig.Repositories.FileRepo
             }
 
             // Create URLs for the saved files
-            var fileUrl = $"{_httpContextAccessor.HttpContext?.Request.Scheme}://{_httpContextAccessor.HttpContext?.Request.Host}/images/{fileName}";
+            var fileUrl = $"{_httpContextAccessor.HttpContext?.Request.Scheme}://{_httpContextAccessor.HttpContext?.Request.Host}/{folderName}/{fileName}";
             return fileUrl;
         }
     }

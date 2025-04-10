@@ -1,36 +1,16 @@
 {
   "Files": [
     {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/7eba91e3-8058-4dea-b729-7c6ceff35308.png",
-      "PackagePath": "staticwebassets/images/7eba91e3-8058-4dea-b729-7c6ceff35308.png"
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/6ffbe4ef-8395-472f-8a73-c07fde091b92.jpg",
+      "PackagePath": "staticwebassets/images/6ffbe4ef-8395-472f-8a73-c07fde091b92.jpg"
     },
     {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/a0a73876-7a73-42bf-aeef-cd2530d9a302.png",
-      "PackagePath": "staticwebassets/images/a0a73876-7a73-42bf-aeef-cd2530d9a302.png"
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/projects/bb368475-1040-4eb6-88f7-978801cae4d2.jpg",
+      "PackagePath": "staticwebassets/images/projects/bb368475-1040-4eb6-88f7-978801cae4d2.jpg"
     },
     {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/dfcec7ec-b0ff-4575-86fc-c8f9a737ba56.jpg",
-      "PackagePath": "staticwebassets/images/dfcec7ec-b0ff-4575-86fc-c8f9a737ba56.jpg"
-    },
-    {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/f9ee65e4-19d9-4911-a83d-596a30f52bd7.jpg",
-      "PackagePath": "staticwebassets/images/f9ee65e4-19d9-4911-a83d-596a30f52bd7.jpg"
-    },
-    {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/pdfs/6e8cf9e6-b01e-446a-a3ac-604109bc4875.pdf",
-      "PackagePath": "staticwebassets/pdfs/6e8cf9e6-b01e-446a-a3ac-604109bc4875.pdf"
-    },
-    {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/pdfs/b8d5f69a-9f52-4645-8aa7-de7edd268ba9.pdf",
-      "PackagePath": "staticwebassets/pdfs/b8d5f69a-9f52-4645-8aa7-de7edd268ba9.pdf"
-    },
-    {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/videos/b9d9d67d-4002-40e9-b9d3-de0e4e9ab3f7",
-      "PackagePath": "staticwebassets/videos"
-    },
-    {
-      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/videos/c8322b9d-7a0c-4328-947c-7a921793a245",
-      "PackagePath": "staticwebassets/videos"
+      "Id": "/Users/tanvir/Documents/Projects/DotNet/Dotnet-8/Portfolio/Portfolio.WebApi/wwwroot/images/projects/fa414a87-a309-41ab-b2dd-49ed14d03d0e.jpeg",
+      "PackagePath": "staticwebassets/images/projects/fa414a87-a309-41ab-b2dd-49ed14d03d0e.jpeg"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

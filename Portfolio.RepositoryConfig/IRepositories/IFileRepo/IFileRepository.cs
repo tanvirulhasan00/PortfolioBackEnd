@@ -8,7 +8,7 @@ namespace Portfolio.RepositoryConfig.IRepositories.IFileRepo
 {
     public interface IFileRepository
     {
-        Task<string> FileUpload(IFormFile file);
+        Task<string> FileUpload(IFormFile file, string folderName);
         void DeleteFile(string fileUrl);
 
     }

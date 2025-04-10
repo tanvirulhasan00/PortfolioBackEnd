@@ -123,19 +123,19 @@ namespace Portfolio.WebApi.Controllers
                     var videoCvUrl = "";
                     if (request.ProfileImageUrl != null)
                     {
-                        profilePicUrl = await _unitOfWork.File.FileUpload(request.ProfileImageUrl);
+                        profilePicUrl = await _unitOfWork.File.FileUpload(request.ProfileImageUrl, "images");
                     }
                     if (request.LogoUrl != null)
                     {
-                        logoUrl = await _unitOfWork.File.FileUpload(request.LogoUrl);
+                        logoUrl = await _unitOfWork.File.FileUpload(request.LogoUrl, "images");
                     }
                     if (request.CVDownloadLink != null)
                     {
-                        cvUrl = await _unitOfWork.File.FileUpload(request.CVDownloadLink);
+                        cvUrl = await _unitOfWork.File.FileUpload(request.CVDownloadLink, "pdfs");
                     }
                     if (request.VideoCVLink != null)
                     {
-                        videoCvUrl = await _unitOfWork.File.FileUpload(request.VideoCVLink);
+                        videoCvUrl = await _unitOfWork.File.FileUpload(request.VideoCVLink, "videos");
                     }
                     personInfo.FirstName = (request.FirstName == "" || request.FirstName == null) ? personInfo.FirstName : request.FirstName;
                     personInfo.LastName = (request.LastName == "" || request.LastName == null) ? personInfo.LastName : request.LastName;
